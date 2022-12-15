@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Contrato Locação de Veiculo</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+
+    <style>
+
+        p {
+            font-size: 12px;
+            color: black;
+            font: 'Arial';
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            height: 10vh;
+            background-image: linear-gradient(to bottom right, white, #999);
+            background-position: center;
+            background-origin: unset;
+            background-repeat: no-repeat;
+        }
+        
+        .container {
+            width: 650px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: Arial;
+            text-align: center;
+            padding: 10px 0;
+            color: dimgray;
+        }
+
+
+        h2 {
+            font-family: Arial;
+            text-align: center;
+            padding: 20px 0;
+            color: black;
+        }
+
+
+        .actions {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #save {
+            background-color: #fff;
+            padding: 10px 20px;
+            border: 1px solid #999;
+            font-size: 2em;
+        }
+
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            font-size: 12px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="assets/css/editor.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Contrato Locacao de Veiculo</h1>
+
+        <textarea name="editor" id="editor" cols="12" rows="12">
+            <h1 style="text-align: center;">Contrato Locacao de Veiculo</h1>
+            <p style="line-height: 30px;"><b>LOCADOR:</b> <input class="inputUser" type="text" id="emitente" style="outline: none;
+                border: none;
+                border-bottom: 1px solid gray; width: 50%;"/>, portador da cédula de identidade R.G. nº: 
+                <input class="inputUser" type="text" id="rg" style="outline: none; width: 16%;
+                border: none;
+                border-bottom: 1px solid gray;" /> , e CPF nº: 
+                <input class="inputUser" type="text" id="cpf" style="outline: none; width: 19%;
+                border: none;
+                border-bottom: 1px solid gray;"/> , residente a domicilio a  
+                <input class="inputUser" type="text" id="lugar" style="outline: none;
+                border: none;
+                border-bottom: 1px solid gray;"/></p>
+
+            <p style="line-height: 30px; letter-spacing: 1,5px"> <b>LOCATORIO:</b> <input class="inputUser" type="text" id="locatorio" style="outline: none; width: 50%;
+                border: none;
+                border-bottom: 1px solid gray;"/>, portador da cédula de identidade R.G. nº:
+                <input class="inputUser" type="varchar(8)" id="rg_locatorio" style="outline: none; width: 16%;
+                border: none;
+                border-bottom: 1px solid gray;"/> , e CPF nº: 
+                <input class="inputUser" type="varchar(10)" id="cpf_locatorio" style="outline: none; width: 19%;
+                border: none;
+                border-bottom: 1px solid gray;"/> , residente a domicilio a 
+                <input class="inputUser" type="text" id="lugarLocatorio" style="outline: none;
+                border: none;
+                border-bottom: 1px solid gray;"/></p>
+                <h1>CLAUSULA 1ª. DO OBJETO DA LOCACAO</h1>
+                <p style="line-height: 30px; letter-spacing: 1,5cm;"> Paragrafo Unico. Por meio deste contrato, que afirmar entre si o(a) LOCADOR(A) e o(a) LOCATORIO(A), regula-se a locacao
+                do veiculo sendo. O veiculo possui as seguintes caracteristicas e condicoes:</p>
+                <p><b>Marca e Modelo:<input class="inputUser" type="text" id="marcaModelo" style="outline: none;
+                    border: none;
+                    border-bottom: 1px solid gray;"/> </b></p>
+                <p><b>Ano da Fabricacao: <input class="inputUser" type="varchar(3)" id="anoVeiculo" style="outline: none; width: 6%;
+                    border: none;
+                    border-bottom: 1px solid gray;"/></b></p>
+                <p><b>Cor: <input class="inputUser" type="text" id="corVeiculo" style="outline: none;
+                    border: none;
+                    border-bottom: 1px solid gray;"/></b></p>
+                <p><b>Chassi: <input class="inputUser" type="varchar(16)" id="chassiVeiculo" style="outline: none;
+                    border: none;
+                    border-bottom: 1px solid gray;"/></b></p>
+                <p><b>Placa: <input class="inputUser" type="varchar(6)" id="placaVeiculo" style="outline: none;
+                    border: none;
+                    border-bottom: 1px solid gray;"/></b></p>
+                    <p><b>OBJETO DO CONTRATO</b></p>
+                    <p>Cláusula 1ª. O presente contrato tem como OBJETO a locação1 do automóvel marca , modelo <span id="marcaModelo"></span>, ano <span id="anoVeiculo"></span>, cor <span id="corVeiculo"></span>, placa <span id="placaVeiculo"></span>, de propriedade da LOCADORA.
+                        
+                        DO USO</p>
+                        
+                        <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 2ª. O automóvel, objeto deste contrato, será utilizado exclusivamente pelo LOCATÁRIO, não sendo permitido o seu uso por terceiros sob pena de rescisão contratual e o pagamento da multa prevista na Cláusula 7ª.
+                        
+                        DA DEVOLUÇÃO</p>
+                        
+                        <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 3ª. O LOCATÁRIO deverá devolver o automóvel à LOCADORA nas mesmas condições em que estava quando o recebeu, ou seja, em perfeitas condições de uso, respondendo pelos danos ou prejuízos causados2.
+                        
+                        DO PRAZO</p>
+                        
+                        <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 4ª. A presente locação terá o lapso temporal de validade de (xxx) dias, iniciando no dia (xxx) e terminando no dia (xxx), data na qual o automóvel deverá ser devolvido.</p>
+                        
+                        <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 5ª. Se o LOCATÁRIO não restituir o automóvel na data estipulada, deverá pagar, enquanto detiver em seu poder, o aluguel que a LOCADORA arbitrar, e responderá pelo dano, que o automóvel venha a sofrer mesmo se proveniente de caso fortuito.</p>
+                        
+                        <p><b>RESCISÃO</b></p>
+                        
+                        <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 6ª. É assegurado às partes a rescisão do presente contrato a qualquer momento, desde que haja comunicação à outra parte com antecedência mínima de (xxx) dias.</p>
+                        
+                        <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 7ª. O descumprimento de qualquer das cláusulas por parte dos contratantes ensejará a rescisão deste instrumento e o devido pagamento de multa, pela parte inadimplente no valor de R$ (xxx) (Valor expresso).</p>
+                        
+                        <p><b>DO FORO</b></p>
+                        
+                        <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 8ª. Para dirimir quaisquer controvérsias oriundas do CONTRATO, as partes elegem o foro da comarca de (xxx);
+                        
+                        Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de igual teor, juntamente com 2 (duas) testemunhas.</p>
+                        <button class="btnClausula" onclick ="adiconaClausula()">Adicionar mais clausulas</button><br></br>
+                        
+                        (Local, data e ano).
+                        
+                        (Nome e assinatura do Representante legal da Locadora)
+                        
+                        (Nome e assinatura do Locatário)
+                        
+                        (Nome, RG e assinatura da Testemunha 1)
+                        
+                        (Nome, RG e assinatura da Testemunha 2)
+                        
+                        ________
+                        Nota:
+                        
+                        1. A Locação de Coisas rege-se pelo previsto nos Arts. 1188 a 1215, do Código Civil.
+                        
+                        2. Art. 1192 do Código Civil.
+                        
+                        3. Art. 1196 do Código Civil.
+        </textarea>
+    </div>
+
+    <script>
+        function getValues(){
+            document.getElementById('marca_Modelo').innerHTML = document.getElementById('marcaModelo').value;
+            document.getElementById('ano_Veiculo').innerHTML = document.getElementById('anoVeiculo').value;
+            document.getElementById('cor_Veiculo').innerHTML = document.getElementById('corVeiculo').value;
+            document.getElementById('chassi_Veiculo').innerHTML = document.getElementById('chassiVeiculo').value;
+            document.getElementById('placa_Veiculo').innerHTML = document.getElementById('placaVeiculo').value;
+        }
+    </script>
+
+    <script>
+        function gerarContrato() {
+            document.getElementById('contrato_emitente').innerHTML = document.getElementById('emitente').value;
+            document.getElementById('contrato_rg').innerHTML = document.getElementById('rg').value;
+            document.getElementById('contrato_cpf').innerHTML = document.getElementById('cpf').value;
+            document.getElementById('contrato_lugar').innerHTML = document.getElementById('lugar').value;
+            document.getElementById('contrato_locatorio').innerHTML = document.getElementById('locatorio').value;
+            document.getElementById('contrato_LocatorioRg').innerHTML = document.getElementById('rg_locatorio').value;
+            document.getElementById('contrato_locatorioCpf').innerHTML = document.getElementById('cpf_locatorio').value;
+            document.getElementById('contrato_lugarLocatorio').innerHTML = document.getElementById('lugarLocatorio').value;
+            document.getElementById('contrato_valor').innerHTML = document.getElementById('valor').value;
+            document.getElementById('marca_Modelo').innerHTML = document.getElementById('marcaModelo').value;
+            document.getElementById('ano_Veiculo').innerHTML = document.getElementById('anoVeiculo').value;
+            document.getElementById('cor_Veiculo').innerHTML = document.getElementById('corVeiculo').value;
+            document.getElementById('chassi_Veiculo').innerHTML = document.getElementById('chassiVeiculo').value;
+            document.getElementById('placa_Veiculo').innerHTML = document.getElementById('placaVeiculo').value;
+            document.getElementById('contrato_Data').innerHTML = dataAtual();
+            // window.print('imprimirContrato');
+        }
+
+        imprimirContrato(){
+            window.print("imprimir")
+        }
+
+        function dataAtual(){
+            let dataAtual = new Date();
+            return data.getDate() + "/" + (data.getMonth()+1) + "/" + data.getFullYear();
+        }
+        function adiconaClausula(){
+            let div = document.querySelector('.container')
+                div.innerHTML = `
+                <p style="line-height: 30px; letter-spacing: 1,5px">Cláusula 9ª. <input class="inputUser" type="varchar(6)" id="clausulaNova" style="outline: none;
+                    border: none;
+                    border-bottom: 1px solid gray;"</input>
+                `
+            }
+
+    </script>
+
+
+    <div class="actions">
+        <button onclick="document.getElementById('CDEditorIframe').save();" id="salvarContrato">Salvar Contrato</button>
+        <button onclick="document.getElementById('CDEditorIframe').contentWindow.print();" id="imprimirContrato">Imprimir Contrato</button>
+    </div>
+
+    <script src="assets/js/editor.js"></script>
+
+    <script>
+        var editor = new CDEditor('#editor');
+    </script>
+
+</body>
+
+</html>

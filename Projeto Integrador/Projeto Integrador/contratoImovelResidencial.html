@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Projeto Integrador - Template de Contrato</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            *{
+                padding: 0%;
+                margin: 0;
+
+            }
+            .gerarContrato{
+
+                width: 100px;
+                margin: 10px;
+                padding: 20px;
+                border: 1px solid black;
+                border-radius: 1px;
+            }
+
+            .dados{
+                padding: 20px;
+                color: black;
+            }
+
+            .print h1{
+                font-style: Arial;
+                color: black;
+                font-size: 12px;
+                border-bottom: 1px solid black;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+
+            .print h2{
+                font-style: Arial;
+                color: black;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 20px;
+                display: inline-block;
+                margin-left: 10px;
+            }
+
+            
+            .print{
+                background-color: white;
+                margin: 10px;
+                padding: 20px;
+                border: 1px solid black;
+                border-radius: 30px;
+                width: 1500px;      
+                display: inline-block;
+            }
+
+            .assinatura{
+                color: black;
+                border-top: 1px solid black;
+                text-align: center;
+            }
+
+            .imprimirContrato{
+                text-align: center;
+                font-size: 30px;
+            }
+
+            @media imprimirContrato{
+                .imprimirContrato {
+                    display: block;
+                }
+
+                .dados {
+                    display: none;
+                }
+            }
+
+            .print h3{
+                font: Arial;
+                color: black;
+                font-size: 24px;
+                text-align: center;
+            }
+            .print p{
+                color: black;
+                font-size: 12px;
+                font: Arial;
+            }
+
+            .print span{
+                font: Arial;
+                color: black;
+                font-size: 12px;
+            }
+
+        </style>
+	</head>
+	<body class="is-preload">
+
+			<div id="wrapper">
+
+					<header id="header">
+						<h1>Contrato Editavel</h1>
+					</header>
+
+    <body class ="gerarContrato">
+					<div class="dados">
+                        <section id="content" class="main">
+                        <span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+                        Nome do Locador: <br/>
+                        <input type="text" id="emitente" /> <br /><br />
+                        R.G do Locador: <br />
+                        <input type="text" id="rg" /> <br /><br />
+                        CPF do Locador: <br />
+                        <input type="text" id="cpf" /> <br /><br />
+                        Residencia do Locador: <br />
+                        <input type="text" id="lugar" /> <br /><br />
+                        Nome do Locatório: <br/>
+                        <input type="text" id="locatorio" /> <br /><br />
+                        R.G do Locatório: <br />
+                        <input type="text" id="rg_locatorio" /> <br /><br />
+                        CPF do Locatório: <br />
+                        <input type="text" id="cpf_locatorio" /> <br /><br />
+                        Residencia do Locatorio: <br />
+                        <input type="text" id="lugarLocatorio" /> <br /><br />
+                        Clausulas:
+                        <input type="text" id="clausulasLocacao" /> <br/> <br />
+                        Valor da Locação: <br />
+                        <input type="number" step= "0.01" id="valor" /> <br /><br />
+                        <button class="button" onclick="gerarContrato()">Gerar contrato</button>
+					</div>
+                    <div class="print">
+                        <h3>Contrato - Locação de Imovel Residencial</h3><br /> <br />
+                        <h1>LOCADOR: </h1><span id="contrato_emitente"> </span></h1>
+                        <h1>, portador da cédula de identidade R.G. nº: </h1><span id="contrato_rg"> </span></h1>
+                        <h1>, e CPF nº: </h1><span id="contrato_cpf"> </span></h1>
+                        <h1>, residente a domicilio a </h1><span id="contrato_lugar"> </span></h1>
+                        <br /> <br />
+                        <h1>LOCATORIO: </h1><span id="contrato_locatorio"> </span></h1>
+                        <h1>, portador da cédula de identidade R.G. nº: </h1><span id="contrato_LocatorioRg"> </span></h1>
+                        <h1>, e CPF nº: </h1><span id="contrato_LocatorioCpf"> </span></h1>
+                        <h1>, residente a domicilio a </h1><span id="contrato_lugarLocatorio"> </span></h1>
+                        <p>Data <span id="contrato_Data"></span></p>
+                        <br><br />
+                        <div class="assinatura">Assinatura</div>
+                    </div>
+                    <div class="imprimirContrato">
+                        <button class="button" onclick="imprimirContrato()">Imprimir contrato</button>
+                    </div>
+                </body>
+                    <script>
+                        function gerarContrato() {
+                            document.getElementById('contrato_emitente').innerHTML = document.getElementById('emitente').value;
+                            document.getElementById('contrato_rg').innerHTML = document.getElementById('rg').value;
+                            document.getElementById('contrato_cpf').innerHTML = document.getElementById('cpf').value;
+                            document.getElementById('contrato_lugar').innerHTML = document.getElementById('lugar').value;
+                            document.getElementById('contrato_locatorio').innerHTML = document.getElementById('locatorio').value;
+                            document.getElementById('contrato_LocatorioRg').innerHTML = document.getElementById('rg_locatorio').value;
+                            document.getElementById('contrato_locatorioCpf').innerHTML = document.getElementById('cpf_locatorio').value;
+                            document.getElementById('contrato_lugarLocatorio').innerHTML = document.getElementById('lugarLocatorio').value;
+                            document.getElementById('contrato_valor').innerHTML = document.getElementById('valor').value;
+                            document.getElementById('contrato_Data').innerHTML = dataAtual();
+                            window.print('imprimirContrato');
+                        }
+
+                        function dataAtual(){
+                            let dataAtual = new Date();
+                            return data.getDate() + "/" + (data.getMonth()+1) + "/" + data.getFullYear();
+                        }
+                    </script>
+
+					<footer id="footer">
+						<section>
+							<h2>Contract Template</h2>
+							<p>Projeto desenvolvido para materia Projeto Integrador IV, que receberá atualizações e será levado adiante.</p>
+							<ul class="actions">
+								<li><a href="index.html" class="button">Pagina Inicial</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Entre em contato</h2>
+							<dl class="alt">
+								<dt>Email</dt>
+								<dd><a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTGmpDtpBvPWRXzwlmFnrpJtGdTWvXMmWztXDdVlLwBxQfVWVphdpfgwMqkKLLgfBqdCKg">Entre em contato via Email</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://twitter.com/Coutinhooou" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.instagram.com/coutinhoou/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.instagram.com/xavier.jao_/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/Coutinho1v9" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</footer>
+
+			</div>
+
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
